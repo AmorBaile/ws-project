@@ -1,0 +1,25 @@
+<nz-layout>
+    <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="triggerTemplate">
+        <ul nz-menu [nzTheme]="'dark'" [nzMode]="'inline'" [nzInlineCollapsed]="isCollapsed">
+            <li nz-submenu>
+                <span title><i class="anticon anticon-user"></i><span class="nav-text">用户</span></span>
+                <ul>
+                    <li nz-menu-item routerLink="/user/manage">用户管理</li>
+                    <li nz-menu-item routerLink="/user/online">在线用户</li>
+                </ul>
+            </li>
+        </ul>
+    </nz-sider>
+    <nz-layout>
+        <nz-header style="background: #fff; padding:0;"></nz-header>
+        <nz-content style="margin:0 16px;">
+            <div style="padding:24px; background: #fff; min-height: 360px;">
+                <router-outlet></router-outlet>
+            </div>
+        </nz-content>
+        <nz-footer style="text-align: center;">Ant Design ©2017 Implement By Angular</nz-footer>
+    </nz-layout>
+</nz-layout>
+<ng-template #trigger>
+    <i class="anticon anticon-up"></i>
+</ng-template>
